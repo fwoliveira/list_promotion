@@ -27,4 +27,5 @@ const PagesPromotionlist = () => {
     )
 }
 
+
 export default PagesPromotionlist;
