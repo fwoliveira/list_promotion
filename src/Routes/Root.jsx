@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import PagesPromotionForm from "../pages/Promotion/Form/form";
+import PagesPromotionForm from "../pages/Promotion/Form/Form";
 
 // import PagesPromotionlist from "../pages/Promotion/List/list";
 import PagesPromotionSearch from "../pages/Promotion/Search/Search";

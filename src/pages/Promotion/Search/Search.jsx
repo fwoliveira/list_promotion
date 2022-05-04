@@ -4,7 +4,7 @@ import UIContainer from "../../../componets/UI/Container/container"
 const PagesPromotionSearch = () => {
     return (
         <UIContainer>
-            <PromotionSearch/>''
+            <PromotionSearch/>
         </UIContainer>
     );
 

@@ -9,7 +9,7 @@
 .PromotionSearchInput{
     display:flex;
     height: 42px;
-    border: 2px solid #ffff;
+    border: 2px solid #ccc;
     border-radius: 8px;
     width: 100%;
     margin-bottom: 20px;
