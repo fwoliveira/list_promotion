@@ -1,7 +1,8 @@
 import React from "react";
 import card from "./card.module.css";
 import {Link} from "react-router-dom";
-function PromotionCard({promotion} ) {
+import UIButton from '../../UI/Button/Button';
+function PromotionCard ({promotion} ) {
   return (
     <div className={card.promotionCard}>
       <img className={card.promotionCardImage} src={promotion.imageUrl} alt={promotion.title} />
@@ -21,8 +22,8 @@ function PromotionCard({promotion} ) {
             {promotion.comments.length }{''}
             {promotion.comments.length >1 ? 'Comentario':'Comentarios' }
           </div >
-          <a className={card.promotionCardLink} href= {promotion.URL} rel="nooper">Ir para o site</a>
-          <Link to={`/edit/${promotion.id}`}>editar</Link>
+          <UIButton component="a" href={promotion.url} rel="nooper" target="_blank">Ir para o site</UIButton>
+          <UIButton component={Link} to={`/edit/${promotion.id}`} className={card.promotionCardButton}>editar</UIButton>
         </footer>
       </div>
     </div>

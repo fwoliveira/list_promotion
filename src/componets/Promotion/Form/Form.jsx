@@ -1,7 +1,8 @@
 import React , {useEffect,useState} from 'react';
 import FormCss from './Form.module.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import UIButton from '../../UI/Button/Button';
 
 const initialValue = {
     title: '',
@@ -80,10 +81,17 @@ const PromotionForm = ({id}) => {
                 <input type="number" step="any" id="price" name="price" value={values.price} onChange={onChange} />
                 </div>
 
-                <div>
-                    <button type="submit">
+                <div className={FormCss.PromotionFormButton}>
+                    <UIButton type="submit" component="button">
                         Salvar
-                    </button>
+                    </UIButton>
+                    <UIButton
+                    to="/"
+                    component={Link}
+                    theme="border-warning"
+                    >
+                        Voltar
+                    </UIButton>
                 </div>
 
                

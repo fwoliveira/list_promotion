@@ -16,3 +16,8 @@
     height: 36px;
     padding: 0 10px;
 }
+.PromotionFormButton{
+    display: flex;
+    justify-content: space-between;
+
+}
