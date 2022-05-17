@@ -1,29 +1,33 @@
 import React, {useEffect, useState} from "react";
 import searchCss from './Search.module.css';
-import axios from 'axios';
+// import axios from 'axios';
 import PromotionCard from '../card/Card';
 import { Link } from "react-router-dom";
 import UIButton from '../../UI/Button/Button';
+import api from '../../../service/Api' 
 
 
 const PromotionSearch = () => { 
         const [promotions, setPromotions] =  useState([]);
         const[ search, setSearch] = useState('');
     
-        useEffect(() => {
-          const params = {};
-          if (search) {
-            params.title_like = search;
-          }
 
-          axios.get('http://localhost:5000/promotions?_embed=comments&_order=desc&_sort=id', { params })
-          .then((response) => {
-            console.log(response.data);
-            setPromotions(response.data);
-    
-          }
-          );
+         useEffect(() => {
+           const params = {};
+           if (search) {
+             params.title_like = search;}
+             
+             const getSeach = async () => {
+               try {
+                 const promotions = await api.get('/promotions?_embed=comments&_order=desc&_sort=id', {params} ) 
+                 setPromotions(promotions.data);
+                } catch (error){
+                  console.log(error);
+                }}
+                getSeach();
+
          }, [search])
+
           return (
          <>
          <header className={searchCss.PromotionSearchHeader}>
